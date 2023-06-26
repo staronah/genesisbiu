@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .error-image {
+            width: 200px;
+            height: 200px;
+        }
+
+        .error-message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 480px) {
+            .error-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .error-message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <img class="error-image" src="images/icons/error.png" alt="Error">
+        <p class="error-message">Oops! Something went wrong.</p>
+        <p class="error-message">Please try again later.</p>
+    </div>
+</body>
+</html>

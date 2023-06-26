@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day and Time Example</title>
+</head>
+<body>
+    <h1>Click the button to open a new page based on the day and time:</h1>
+    <button onclick="openNewPage()">Open Page</button>
+
+    <script>
+        function openNewPage() {
+            var currentDate = new Date();
+            var currentDay = currentDate.getDay();
+            var currentHour = currentDate.getHours();
+            
+            if (currentDay === 0) { // Sunday
+                if (currentHour < 12) {
+                    window.open('sunday_morning.html', '_blank');
+                } else {
+                    window.open('sunday_afternoon.html', '_blank');
+                }
+            } else if (currentDay === 1) { // Monday
+                window.open('monday.html', '_blank');
+            } else if (currentDay === 2) { // Tuesday
+                window.open('tuesday.html', '_blank');
+            } else if (currentDay === 3) { // Wednesday
+                if (currentHour < 18) {
+                    window.open('wednesday_before6pm.html', '_blank');
+                } else {
+                    window.open('wednesday_after6pm.html', '_blank');
+                }
+            } else {
+                window.open('default.html', '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

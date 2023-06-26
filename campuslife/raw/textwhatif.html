@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Opener</title>
+</head>
+<body>
+  <h1>Website Opener</h1>
+  
+  <label for="website">Enter a website:</label>
+  <input type="text" id="website" placeholder="e.g., https://www.example.com">
+  <button onclick="openWebsite()">Open</button>
+  
+  <script>
+    function openWebsite() {
+      var input = document.getElementById("website").value;
+      
+      if (input.startsWith("s")) {
+        window.open(input, "_blank");
+      } else if (input.startsWith("v")) {
+        window.open(input, "_blank");
+      } else {
+        alert("Please enter a valid URL starting with 'https://'.");
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function openNewPage() {
+      var inputValue = document.getElementById('inputValue').value;
+
+      if (inputValue === 'LC34BKS') {
+          window.open('booking.html');
+      } else if (inputValue === 'CCATT') {
+          window.open('chapel.html');
+      } else if (inputValue === 'LCSPDBK23') {
+          window.open('bedchecks/legacy campus/splendour.html');
+      } else if (inputValue === 'LCBOGBK23') {
+          window.open('bedchecks/legacy campus/balmofgilead.html');
+      } else if (inputValue === 'LCGCHBK23') {
+          window.open('bedchecks/legacy campus/grace.html');
+      } else if (inputValue === 'LCABOBK23') {
+          window.open('bedchecks/legacy campus/aboveonly.html');
+      } else if (inputValue === 'LCCHABK23') {
+          window.open('bedchecks/legacy campus/chapions.html');
+      } else if (inputValue === 'LCLOVBK23') {
+          window.open('bedchecks/legacy campus/love.html');
+      } else if (inputValue === 'LCHOPBK23') {
+          window.open('bedchecks/legacy campus/hope.html');
+      } else if (inputValue === 'LCFAHBK23') {
+          window.open('bedchecks/legacy campus/faith.html');
+      } else {
+          alert('Invalid input. Please try again.');
+      }
+  }
+</script>

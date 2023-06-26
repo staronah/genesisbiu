@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CGPA Calculator</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+  <style>
+    button {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #45a049;
+    }
+  
+    .result {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+<meta name="robots" content="noindex, follow">
+<script nonce="97acae0f-c03d-4cfa-aa17-303b38283089">(function(w,d){!function(dK,dL,dM,dN){dK[dM]=dK[dM]||{};dK[dM].executed=[];dK.zaraz={deferred:[],listeners:[]};dK.zaraz.q=[];dK.zaraz._f=function(dO){return function(){var dP=Array.prototype.slice.call(arguments);dK.zaraz.q.push({m:dO,a:dP})}};for(const dQ of["track","set","debug"])dK.zaraz[dQ]=dK.zaraz._f(dQ);dK.zaraz.init=()=>{var dR=dL.getElementsByTagName(dN)[0],dS=dL.createElement(dN),dT=dL.getElementsByTagName("title")[0];dT&&(dK[dM].t=dL.getElementsByTagName("title")[0].text);dK[dM].x=Math.random();dK[dM].w=dK.screen.width;dK[dM].h=dK.screen.height;dK[dM].j=dK.innerHeight;dK[dM].e=dK.innerWidth;dK[dM].l=dK.location.href;dK[dM].r=dL.referrer;dK[dM].k=dK.screen.colorDepth;dK[dM].n=dL.characterSet;dK[dM].o=(new Date).getTimezoneOffset();if(dK.dataLayer)for(const dX of Object.entries(Object.entries(dataLayer).reduce(((dY,dZ)=>({...dY[1],...dZ[1]})),{})))zaraz.set(dX[0],dX[1],{scope:"page"});dK[dM].q=[];for(;dK.zaraz.q.length;){const d_=dK.zaraz.q.shift();dK[dM].q.push(d_)}dS.defer=!0;for(const ea of[localStorage,sessionStorage])Object.keys(ea||{}).filter((ec=>ec.startsWith("_zaraz_"))).forEach((eb=>{try{dK[dM]["z_"+eb.slice(7)]=JSON.parse(ea.getItem(eb))}catch{dK[dM]["z_"+eb.slice(7)]=ea.getItem(eb)}}));dS.referrerPolicy="origin";dS.src="../../../cdn-cgi/zaraz/sd0d9.js?z="+btoa(encodeURIComponent(JSON.stringify(dK[dM])));dR.parentNode.insertBefore(dS,dR)};["complete","interactive"].includes(dL.readyState)?zaraz.init():dK.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+
+  <div class="limiter">
+<div class="container-login100">
+<div class="wrap-login100">
+<form class="login100-form validate-form">
+
+  <span class="login100-form-title p-b-26">
+Welcome
+</span>
+<span class="login100-form-title p-b-26">
+      <div id="gpa"></div>
+</span>
+  <div id="course-input" class="container">
+
+    <div id="course-input" class="wrap-input100 validate-input form-group">
+      <input id="course-name" class="input100" type="text" name="Credit" >
+      <span class="focus-input100" data-placeholder="course Name"></span>
+    </div>
+
+    <div id="course-input" class="wrap-input100 validate-input form-group">
+        <input id="course-grade" mim="1" max="5" class="input100" type="number" name="Credit" >
+        <span class="focus-input100" data-placeholder="Grade (i.e A:5 B:4 C:3 D:2 E:1 F:0)"></span>
+    </div>
+
+    <div id="course-input" class="wrap-input100 validate-input form-group">
+        <input id="course-unit" mim="0" max="10" class="input100" type="number" name="Credit" required>
+        <span class="focus-input100" data-placeholder="Credit unit"></span>
+    </div>
+    <button onclick="addCourse()">Add Course</button>
+
+   
+    
+    <div id="course-list"></div>
+    
+
+    
+    <script>
+        const courses = [];
+        
+        function addCourse() {
+            const courseName = document.getElementById("course-name").value;
+            const courseGrade = parseFloat(document.getElementById("course-grade").value);
+            const courseUnit = parseFloat(document.getElementById("course-unit").value);
+            
+            if (courseName && !isNaN(courseGrade) && !isNaN(courseUnit)) {
+                const course = {
+                    name: courseName,
+                    grade: courseGrade,
+                    unit: courseUnit
+                };
+                
+                courses.push(course);
+                
+                const courseList = document.getElementById("course-list");
+                const listItem = document.createElement("p");
+                listItem.textContent = `Course : ${course.name} | Grade : ${course.grade} | Unit : ${course.unit}`;
+                courseList.appendChild(listItem);
+                
+                document.getElementById("course-name").value = "";
+                document.getElementById("course-grade").value = "";
+                document.getElementById("course-unit").value = "";
+                
+                calculateCGPA();
+            }
+        }
+        
+        function calculateCGPA() {
+            const totalGradeUnit = courses.reduce((sum, course) => sum + (course.grade * course.unit), 0);
+            const totalUnits = courses.reduce((sum, course) => sum + course.unit, 0);
+            const cgpa = totalGradeUnit / totalUnits;
+            
+            const cgpaDisplay = document.getElementById("gpa");
+            cgpaDisplay.textContent = `GPA: ${cgpa.toFixed(2)}`;
+        }
+    </script>
+
+
+
+
+
+  </div>
+</form>
+</div>
+</div>
+</div>
+
+
+  
+  
+</body>
+</html>

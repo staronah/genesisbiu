@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>confirmed</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<style>
+    button {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #45a049;
+    }
+  
+    .result {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="limiter">
+    <div class="container-login100">
+    <div class="wrap-login100">
+    <form class="login100-form validate-form">
+    
+      <span class="login100-form-title p-b-26">
+    Confirmed
+    </span>
+    <p></p>
+      <div id="course-input" class="container">
+    
+        <button onclick="openWebsite()">Continue</button>
+      </div></form></div></div></div>
+
+
+
+
+
+
+
+
+
+<script>
+function openWebsite() {
+  var time = new Date();
+  var hour = time.getHours();
+ if (hour >= 10 && hour < 11) {
+    window.open("https://www.appsheet.com/start/c8286ca2-2fb6-4c81-bf4f-bae84d0032b3");
+  } else {
+    window.open("error.html");
+  }
+}
+</script>
+
+</body>
+</html>

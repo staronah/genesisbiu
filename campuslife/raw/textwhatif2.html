@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Input Example</title>
+  <script>
+    function openNewPage() {
+      var inputValue = document.getElementById("inputField").value;
+
+      if (inputValue === "example") {
+        window.location.href = "newpage.html";
+      } else {
+        alert("Input value does not match the condition!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Text Input Example</h1>
+  <label for="inputField">Enter a value:</label>
+  <input type="text" id="inputField">
+  <button onclick="openNewPage()">Submit</button>
+</body>
+</html>

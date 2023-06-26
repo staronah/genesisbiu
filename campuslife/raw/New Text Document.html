@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Input Example</title>
+</head>
+<body>
+    <h1>Enter a value to open a new page:</h1>
+    <input type="text" id="inputValue" />
+    <button onclick="openNewPage()">Open Page</button>
+
+    <script>
+        function openNewPage() {
+            var inputValue = document.getElementById('inputValue').value;
+            
+            if (inputValue === 'example') {
+                window.open('example.html');
+            } else if (inputValue === 'another') {
+                window.open('another.html', '_blank');
+            } else {
+                alert('Invalid input. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
