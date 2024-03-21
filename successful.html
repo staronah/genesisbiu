@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/javascript">
+      function hideInstruction(modalId){
+          document.getElementById(modalId).style.display = "none";
+      }
+      </script>
+    <title>Sign in Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form method="post"class="sign-in-form"action="https://www.biuportal.net/LogIn.aspx" id="loginForm" requiressl="true" autocomplete="on">
+            <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTMzNDU1NzA1D2QWAgIDDxYCHgxhdXRvY29tcGxldGUFA29mZmRkUqof2LAdE4XaTKVxV+vLr66d+Qk=" />
+            </div>
+            <div class="aspNetHidden">
+          
+              <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB" />
+              <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAARd9vtBLyjpHiBYSoOme+1hY3plgk0YBAefRz3MyBlTcHY2+Mc6SrnAqio3oCKbxYainihG6d/Xh3PZm3b5AoMQ9QuH9fLNL5w33RiP/YoinnH+MVI=" /></div>
+              <div class="errorMessages"><span id="lblErrorMessage"></span></div>
+
+            <h2 class="title">Successful</h2>
+           
+          </form>         
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <p>
+             <h1>GENESIS</h1>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+      </div>
+      
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
